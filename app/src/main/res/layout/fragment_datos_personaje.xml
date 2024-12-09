@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LayoutPJ"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCA3A"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".fragmentos.datosPersonaje">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8E5A30"
+        android:fontFamily="@font/aclonica"
+        android:text="Información del Personaje"
+        android:textAlignment="center"
+        android:textColor="#F4F1DE"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/etDatosPJ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#1B0028" />
+</LinearLayout>
