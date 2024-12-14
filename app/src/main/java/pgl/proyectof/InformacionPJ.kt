@@ -2,6 +2,7 @@ package pgl.proyectof
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ class InformacionPJ : AppCompatActivity() {
     lateinit private var tabLayout: TabLayout
     lateinit private var viewPager : ViewPager2
     lateinit private var nombre: TextView
+    lateinit private var botonAtras: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +40,7 @@ class InformacionPJ : AppCompatActivity() {
         personaje = intent.getSerializableExtra("personaje") as Personaje
         nombre = findViewById(R.id.tvNombrePrincipal)
         nombre.text = personaje.nombre
+        botonAtras = findViewById(R.id.buttAtras)
 
         tabLayout = findViewById(R.id.tabLayout)
         viewPager = findViewById(R.id.viewPager)
@@ -52,6 +55,10 @@ class InformacionPJ : AppCompatActivity() {
             }
         }.attach()
 
+
+        botonAtras.setOnClickListener {
+            finish()
+        }
 
     }
 

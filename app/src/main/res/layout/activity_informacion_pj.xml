@@ -46,7 +46,7 @@
 
             <TextView
                 android:id="@+id/tvNombrePrincipal"
-                android:layout_width="wrap_content"
+                android:layout_width="553dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
                 android:paddingLeft="20dp"
@@ -54,6 +54,20 @@
                 android:text="NOMBRE DEL PJ"
                 android:textAlignment="center"
                 android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttAtras"
+                android:layout_width="wrap_content"
+                android:layout_height="66dp"
+                android:layout_weight="0"
+                android:backgroundTint="#D17A47"
+                android:fontFamily="@font/aclonica"
+                android:text="Atrás"
+                android:textAlignment="viewEnd"
+                android:textColor="#1B0028"
+                android:textColorHint="#1B0028"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>

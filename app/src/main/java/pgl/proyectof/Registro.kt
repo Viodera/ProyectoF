@@ -26,6 +26,7 @@ class Registro : AppCompatActivity() {
     private lateinit var clase: Spinner
     private lateinit var atributos: EditText
     private lateinit var botonRegistro: Button
+    private lateinit var botonCancelar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +51,13 @@ class Registro : AppCompatActivity() {
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, clases)
         clase.adapter = adaptador
 
-        atributos = findViewById<EditText>(R.id.atributosPJ)
-        botonRegistro = findViewById<Button>(R.id.buttRegistro)
+        atributos = findViewById(R.id.atributosPJ)
+        botonRegistro = findViewById(R.id.buttRegistro)
+        botonCancelar = findViewById(R.id.buttRegresar)
+
+        botonCancelar.setOnClickListener {
+            finish()
+        }
 
         clase.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(

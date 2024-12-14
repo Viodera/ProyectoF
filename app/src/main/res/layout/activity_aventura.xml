@@ -114,18 +114,45 @@
                         android:text="..."
                         android:textColor="#1B0028" />
 
-                    <Button
-                        android:id="@+id/buttContinuar"
-                        android:layout_width="269dp"
-                        android:layout_height="77dp"
-                        android:layout_weight="0"
-                        android:backgroundTint="#FFCA3A"
-                        android:fontFamily="@font/aclonica"
-                        android:text="Continuar"
-                        android:textColor="#1B0028"
-                        android:textSize="34sp"
-                        android:textStyle="bold"
-                        android:visibility="invisible" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttContinuar"
+                            android:layout_width="269dp"
+                            android:layout_height="77dp"
+                            android:layout_weight="0"
+                            android:backgroundTint="#FFCA3A"
+                            android:fontFamily="@font/aclonica"
+                            android:text="Continuar"
+                            android:textColor="#1B0028"
+                            android:textSize="34sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <Button
+                            android:id="@+id/buttSalirAventura"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="0"
+                            android:backgroundTint="#D17A47"
+                            android:fontFamily="@font/aclonica"
+                            android:text="Atrás"
+                            android:textAlignment="viewEnd"
+                            android:textColor="#1B0028"
+                            android:textColorHint="#1B0028"
+                            android:textSize="34dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

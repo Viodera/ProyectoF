@@ -39,6 +39,7 @@ class Combate : AppCompatActivity() {
     private var onSpeechError: ((Int) -> Unit)? = null
 
     private lateinit var startButton: Button
+    private lateinit var botonAtras: Button
     private lateinit var tvVidaPJ: TextView
     private lateinit var tvVidaMonstruo: TextView
     private lateinit var barraVidaPJ: ProgressBar
@@ -92,6 +93,7 @@ class Combate : AppCompatActivity() {
         tvVidaMonstruo = findViewById(R.id.tvVidaMonstruo)
         tvAccionMonstruo = findViewById(R.id.tvAccionMonstruo)
         startButton = findViewById(R.id.buttAccion)
+        botonAtras = findViewById(R.id.buttSalirCombate)
         barraVidaPJ = findViewById(R.id.barraVidaPJ)
         barraVidaPJ.max = MAX_VIDA_PJ
         barraVidaMonstruo = findViewById(R.id.barraVidaMonstruo)
@@ -117,6 +119,13 @@ class Combate : AppCompatActivity() {
                 combate()
             }
         }
+        botonAtras.setOnClickListener {
+            finish()
+        }
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
     }
 
     private fun reconocerAccionPorVoz() {

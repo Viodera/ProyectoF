@@ -13,7 +13,6 @@ import pgl.proyectof.objetos.Usuario
 
 
 @Database(entities = [Usuario::class, Personaje::class, Habilidad::class, Monstruo::class], version = 1)
-//@Database(entities = [Usuario::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao
     abstract fun personajeDao(): PersonajeDao

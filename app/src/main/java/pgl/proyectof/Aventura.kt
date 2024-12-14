@@ -29,6 +29,7 @@ class Aventura : AppCompatActivity() {
     private lateinit var textoPJ: TextView
     private lateinit var botonContinuar: Button
     private var isPalabrasMagicas = false
+    private lateinit var botonSalir: Button
 
     private lateinit var personaje: Personaje
 
@@ -48,6 +49,7 @@ class Aventura : AppCompatActivity() {
         textoDiosa = findViewById(R.id.tvTextoDiosa)
         textoPJ = findViewById(R.id.tvTextoPJ)
         botonContinuar = findViewById(R.id.buttContinuar)
+        botonSalir = findViewById(R.id.buttSalirAventura)
         val textoInicio = "Bienvenido a la aventura, ${personaje.nombre}.\n" +
                 "Soy la Diosa de la Creación, y te he llamado aquí para que me ayudes a salvar el mundo.\n" +
                 "Un malvado hechicero ha robado el Orbe de la Creación, y con él ha sumido al mundo en la oscuridad.\n" +
@@ -77,6 +79,9 @@ class Aventura : AppCompatActivity() {
         }
         botonContinuar.setOnClickListener {
             reconocerCancion()
+        }
+        botonSalir.setOnClickListener {
+            finish()
         }
     }
 

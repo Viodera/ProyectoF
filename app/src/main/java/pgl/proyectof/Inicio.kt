@@ -2,10 +2,12 @@
 
 package pgl.proyectof
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -65,6 +67,13 @@ class Inicio : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
+        Toast.makeText(this,"Para retroceder, cierre sesión en \"Información\"", Toast.LENGTH_SHORT).show()
+        // Deja este método vacío o realiza alguna acción personalizada si deseas
+    }
+
     //Cargar habilidades en la base de datos
     fun cargarHabilidades(){
         val listaHabilidades = listOf(

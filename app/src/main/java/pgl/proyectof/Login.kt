@@ -1,5 +1,6 @@
 package pgl.proyectof
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -81,6 +82,10 @@ class Login : AppCompatActivity() {
             intent.putExtra("personaje", pj)
             startActivity(intent)
         }
+    }
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
+
     }
 }
 
