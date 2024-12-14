@@ -7,6 +7,8 @@ import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.util.Log
+import android.view.GestureDetector
+import android.view.MotionEvent
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -24,11 +26,13 @@ import java.util.Locale
 
 class Aventura : AppCompatActivity() {
     private val SPEECH_REQUEST_CODE = 1
+    private lateinit var detectorGestos: GestureDetector
 
     private lateinit var textoDiosa: TextView
     private lateinit var textoPJ: TextView
     private lateinit var botonContinuar: Button
     private var isPalabrasMagicas = false
+    private var isParadaTexto = false
     private lateinit var botonSalir: Button
 
     private lateinit var personaje: Personaje
@@ -45,6 +49,7 @@ class Aventura : AppCompatActivity() {
         }
 
         personaje = intent.getSerializableExtra("personaje") as Personaje
+
 
         textoDiosa = findViewById(R.id.tvTextoDiosa)
         textoPJ = findViewById(R.id.tvTextoPJ)
@@ -83,7 +88,12 @@ class Aventura : AppCompatActivity() {
         botonSalir.setOnClickListener {
             finish()
         }
+
+
+
+
     }
+
 
     private fun reconocerCancion() {
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
@@ -152,16 +162,32 @@ class Aventura : AppCompatActivity() {
     private fun hablar(texto: String, textoAHablar: TextView, delay: Long) {
         var letra = 0
         textoAHablar.text = ""
+        var gestoParar = false
+
         val runnable = object : Runnable {
             override fun run() {
-                if (letra < texto.length) {
+                if (letra < texto.length && !gestoParar) {
                     textoAHablar.append(texto[letra].toString())
                     letra++
                     textoAHablar.postDelayed(this, delay)
+                } else {
+                    textoAHablar.text = texto
                 }
             }
         }
         textoAHablar.post(runnable)
+
+        val detector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
+            override fun onDoubleTap(e: MotionEvent): Boolean {
+                gestoParar = true
+                return true
+            }
+        })
+
+        textoAHablar.setOnTouchListener { _, event ->
+            detector.onTouchEvent(event)
+            true
+        }
     }
 
 
